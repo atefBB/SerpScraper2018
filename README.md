@@ -31,26 +31,22 @@ $google->setPreference('results_per_page', 100);
 $results = array();
 
 do {
-
 	$response = $google->search("how to scrape google", $page);
 	
 	// error field must be empty otherwise query failed
-	if($response->error == false){
-	
+	if($response->error == false) {	
 		$results = array_merge($results, $response->results);
 		$page++;
-	
-	} else if($response->error == 'captcha'){
-	
+	} else if($response->error == 'captcha') {
 		// assuming you have a subscription  to this captcha solving service: http://www.deathbycaptcha.com
 		$status = $google->solveCaptcha("dbc_username", "dbc_password");
 		
-		if($status){
+		if($status)
+		{
 			$page++;
 		}
 		
 		continue;
-		
 	}
 
 } while ($response->has_next_page);
@@ -66,14 +62,16 @@ use SerpScraper\Engine\BingSearch;
 $bing = new BingSearch();
 $results = array();
 
-for($page = 1; $page < 10; $page++){
-	
+for($page = 1; $page < 10; $page++)
+{	
 	$response = $bing->search("search bing using php", $page);
-	if($response->error == false){
+	if($response->error == false)
+	{
 		$results = array_merge($results, $response->results);
 	}
 	
-	if($response->has_next_page == false){
+	if($response->has_next_page == false)
+	{
 		break;
 	}
 }
