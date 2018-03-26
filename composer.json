@@ -1,7 +1,15 @@
 {
-	"name": "athlon1600/serpscraper",
-	"description": "PHP powered interface for querying the most popular Search Engines",
-	"keywords": ["google scraper", "bing scraper", "google search", "bing search", "google captcha solver", "google proxy"],
+	"name": "atefBB/serpscraper",
+	"description":
+		"PHP powered interface for querying the most popular Search Engines",
+	"keywords": [
+		"google scraper",
+		"bing scraper",
+		"google search",
+		"bing search",
+		"google captcha solver",
+		"google proxy"
+	],
 	"license": "MIT",
 	"require": {
 		"ext-curl": "*"
@@ -10,8 +18,6 @@
 		"psr-4": {
 			"SerpScraper\\": "src/"
 		},
-		"files": [
-			"src/dbc/deathbycaptcha.php"
-		]
+		"files": ["src/dbc/deathbycaptcha.php"]
 	}
 }
